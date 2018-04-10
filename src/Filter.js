@@ -7,9 +7,10 @@ export default class Filter extends Component {
 	}
 
 	render() {
+		const placeholder = `Search (${this.props.answersCount} asnwers)`
 		return (
 			<div className="Filter">
-				<input className="FilterInput" type="text" placeholder="Search" onChange={this.onChange.bind(this)}/>
+				<input className="FilterInput" type="text" placeholder={placeholder} onChange={this.onChange.bind(this)}/>
 			</div>
 		);
 	}

@@ -26,16 +26,16 @@ class App extends Component {
   }
 
   render() {
-    const data = this.getFilteredData();
+    const filteredData = this.getFilteredData();
 
     return (
       <div className="App">
         <header className="App-header">
           <h1>Что было бы, если бы <a href="//t.me/forwebchat">Чат For Web</a> имел свой QA?</h1>
         </header>
-        <Filter onChange={this.onFilterChange.bind(this)}/>
+        <Filter onChange={this.onFilterChange.bind(this)} answersCount={data.length}/>
         <section>
-          {data.map(({question, answer}) => <Article key={answer+question} question={question} answer={answer} />)}
+          {filteredData.map(({question, answer}) => <Article key={answer+question} question={question} answer={answer} />)}
         </section>
       </div>
     );
